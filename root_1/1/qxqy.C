@@ -1,4 +1,4 @@
-{
+void qxqy(){
 #include<iomanip>
 gROOT->Reset();
 
@@ -14,7 +14,7 @@ TH2D *qy_vs_qx;
 TH1F *qx, *qy;
 
 
-  
+
 qx=new TH1F("","", 100, -20, 20);
 qy=new TH1F("","", 100, -20, 20);
 
@@ -28,7 +28,7 @@ if(!stream){  cout<<"Brak pliku "<<endl; return 0; }
 
 while(!stream.eof())
   {
-  
+
     stream>>x>>y;
 
     qy_vs_qx->Fill(y,x);
@@ -60,12 +60,12 @@ qy_vs_qx->GetYaxis()->SetTitleColor(2);
 qy_vs_qx->Draw("colz");
 
 pt1=new TPaveText(x1,y1,x2,y2,"NDC");
-pt1.SetFillColor(0);
-pt1.AddText("qy vs qx");
-pt1.SetBorderSize(0);
-pt1.SetTextSize(0.06);
-pt1.SetTextColor(2);
-pt1.Draw();
+pt1->SetFillColor(0);
+pt1->AddText("qy vs qx");
+pt1->SetBorderSize(0);
+pt1->SetTextSize(0.06);
+pt1->SetTextColor(2);
+pt1->Draw();
 
 c1->cd(2);
 //gPad->SetLogz();
@@ -76,12 +76,12 @@ qy_vs_qx->GetYaxis()->SetTitleColor(2);
 qy_vs_qx->Draw();
 
 pt1=new TPaveText(x1,y1,x2,y2,"NDC");
-pt1.SetFillColor(0);
-pt1.AddText("qy vs qx");
-pt1.SetBorderSize(0);
-pt1.SetTextSize(0.06);
-pt1.SetTextColor(4);
-pt1.Draw();
+pt1->SetFillColor(0);
+pt1->AddText("qy vs qx");
+pt1->SetBorderSize(0);
+pt1->SetTextSize(0.06);
+pt1->SetTextColor(4);
+pt1->Draw();
 
 c1->cd(3);
 //gPad->SetLogz();
@@ -92,12 +92,12 @@ qx->GetYaxis()->SetTitleColor(2);
 qx->Draw();
 
 pt1=new TPaveText(x1,y1,x2,y2,"NDC");
-pt1.SetFillColor(0);
-pt1.AddText("qx");
-pt1.SetBorderSize(0);
-pt1.SetTextSize(0.06);
-pt1.SetTextColor(4);
-pt1.Draw();
+pt1->SetFillColor(0);
+pt1->AddText("qx");
+pt1->SetBorderSize(0);
+pt1->SetTextSize(0.06);
+pt1->SetTextColor(4);
+pt1->Draw();
 
 c1->cd(4);
 //gPad->SetLogz();
@@ -108,21 +108,14 @@ qy->GetYaxis()->SetTitleColor(2);
 qy->Draw();
 
 pt1=new TPaveText(x1,y1,x2,y2,"NDC");
-pt1.SetFillColor(0);
-pt1.AddText("qy");
-pt1.SetBorderSize(0);
-pt1.SetTextSize(0.06);
-pt1.SetTextColor(4);
-pt1.Draw();
+pt1->SetFillColor(0);
+pt1->AddText("qy");
+pt1->SetBorderSize(0);
+pt1->SetTextSize(0.06);
+pt1->SetTextColor(4);
+pt1->Draw();
 
 //&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
 
 
 }
-
-
-
-
-
-
-

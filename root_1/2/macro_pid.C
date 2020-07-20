@@ -1,4 +1,4 @@
-{
+void macro_pid(){
 
 gROOT->Reset();
 gStyle->SetNdivisions(505,"XY");
@@ -32,18 +32,15 @@ gStyle->SetPalette(1);
  TCanvas *c=new TCanvas("de-e","de-e",600,400);
  c->Divide(1,0);
 
- 
 
+       char file1[100];
        sprintf(file1,"ede_2_7.root");
-       f1=new TFile(file1);
-       TH2F *p1=f1->Get("C3");
+       TFile *f1=new TFile(file1);
+       TH2F *p1=(TH2F*)f1->Get("C3");
        c->cd(1);
        p1->Draw("colz");
        c->Draw();
 
-  
+
 
 }
-
-
-
